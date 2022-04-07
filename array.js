@@ -36,3 +36,7 @@ array.reverse();            // 5. Sort the array in reverse order. (Not alphabet
                             // the current Array i.e. ['a', 'c', 'b'] becomes ['b', 'c', 'a'])
 console.log(array);
                             
+
+// question2
+var array2 = ["Banana", ["Apples", ["Oranges"], "Blueberries"]];
+array2[1][1];
