@@ -49,22 +49,40 @@ var database= [
 
 
 
+//4. Create a function called SignIn that accept two parameter - username, password. This function would check the database array to check for any matching entry. If username & password matches return 
+Both the username and staus, if not return "Sorry, wrong username and password" 
+
 var username = prompt("What's your username?");
 var password = prompt("What's your password?");
-        function signIn(userName, password) {
+        function signIn(username, password) {
+            var database= [{ username:"jack",
+            password:"jack123",
+            status:"male"
+            },
+    
+            { username:"mark",
+            password:"mark123",
+            status:"male"
+            }
+        ]
             if (username===database[0].username &&
                 password===database[0].password){
                 alert("Access Granted!");
+                return database[0].username + database[0].status;
             }
-            else{
+            else if(username===database[1].username &&
+                password===database[1].password){
+                alert("Access Granted!");
+                return database[1].username + database[1].status;
+            }else{
                 alert("Sorry, wrong username and password");
             }
             
         }
         signIn(username, password);
 
-
-        var database= [                             //5. Initialise your database array with five object of username, password and status. 
+//5. Initialise your database array with five object of username, password and status. 
+        var database= [                             
             { username:"jack",
             password:"jack123",
             status:"male"
@@ -72,7 +90,7 @@ var password = prompt("What's your password?");
     
             { username:"mark",
             password:"mark123",
-            status:"active"
+            status:"male"
             },
     
             { username:"ruth",
@@ -95,14 +113,41 @@ var password = prompt("What's your password?");
 
 
 
-    
-function signIn(username, password){             //6. Update your signIn function to use loop; running through the item in the database and return matching username and password.
+//6. Update your signIn function to use loop; running through the item in the database and return matching username and password.  
+function signIn(username, password){ 
+    var database= [                             
+    { username:"jack",
+    password:"jack123",
+    status:"male"
+    },
+
+    { username:"mark",
+    password:"mark123",
+    status:"male"
+    },
+
+    { username:"ruth",
+    password:"ruthy123",
+    status:"female"    
+    },
+
+    { username:"Damilola",
+    password:"dami123",
+    status:"female"    
+    },
+
+    { username:"Esther",
+    password:"esty123",
+    status:"female"    
+    }
+
+]            
 	for(var i=0; i < database.length; i++){
 		if(database[i].username === username &&
 			database[i].password === password){
-			console.log(database);
+			return database[i].username + database[i].password;
 		}else{
 			alert("Sorry, wrong username and password");
 		}
 	}  
-};                                   
+};  
